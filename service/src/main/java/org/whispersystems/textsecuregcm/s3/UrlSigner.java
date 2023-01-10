@@ -39,9 +39,7 @@ public class UrlSigner {
       this.bucket      = bucket;
     }
   
-  public String getPreSignedUrl(long attachmentId, HttpMethod method)
-          throws InvalidKeyException, NoSuchAlgorithmException, IOException
-  {
+  public String getPreSignedUrl(long attachmentId, HttpMethod method) throws MinioException, XmlPullParserException, NoSuchAlgorithmException, IOException, InvalidKeyException {
       String request = geturl(bucket, String.valueOf(attachmentId), method);
       return request;
   }
